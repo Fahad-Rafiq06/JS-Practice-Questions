@@ -21,7 +21,7 @@
 // }
 
 
-// game to guess the right number 
+// game to guess right number 
 
 // let gamenum = 68;
 
@@ -46,29 +46,58 @@
 
 // console.log(output)
 
+// Checking difference between for-of and for-in loop
 
-// Checking the difference between for-of and for-in loop
-
-let heroes = ["Ironman" , "Captain America", "Spider-man", "Thor", "Hulk"];
+let heroes = ["Ironman", "Captain America", "Spider-man", "Thor", "Hulk"];
 let cities = ["Karachi", "islamabad", "lahore", "quetta"];
 
-for (let hero of heroes){ //prints value directly that's why used well for strings and arrays
+for (let hero of heroes) { //prints value directly that's why used well for strings and arrays
     console.log(hero)
 }
 
-for (let city in cities){ //prints keys/indices directly that's why works well for objects
+for (let city in cities) { //prints keys/indices directly that's why works well for objects
     console.log(cities[city])
 }
 
 // finding average of marks
 
-let marks = [85,97,44,37,76,60];
+let marks = [85, 97, 44, 37, 76, 60];
 let sum = 0;
-for (let i=0; i < marks.length; i++){
+for (let i = 0; i < marks.length; i++) {
     // console.log(sum+=marks[i])
-    sum+=marks[i]
+    sum += marks[i]
 }
 
-let avg = sum/marks.length;
+let avg = sum / marks.length;
 
-console.log(`the average marks of class = ${avg}`)
+console.log(`the average marks of class = ${avg}`);
+
+// applying discount of 10% on each item.
+
+let originalPrice = [250, 645, 300, 900, 50];
+
+for (let i of originalPrice) {
+    let discountPrice = i / 100 * 10;
+    let finalPrice = i - discountPrice;
+    console.log(finalPrice)
+}
+
+// console.log(250/100*10)
+
+// Creating Array to Store Companies
+
+let companies = ["Netflix", "IBM", "Microsoft", "Google", "Twitter", "Uber", "Bloomberg"]
+
+// Remove first company from the array
+
+companies.shift();
+
+// Remover Uber and add Ola on it's palce
+
+companies.splice(4,1,"Ola");
+
+// Add Amazon at the end
+
+companies.push("Amazon")
+
+console.log(companies)
