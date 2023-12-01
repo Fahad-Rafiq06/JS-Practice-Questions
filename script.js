@@ -103,35 +103,99 @@
 // console.log(companies)
 
 
-// Create a function that takes a string as an argument and returns the vowels in the string
+// Create a function that takes string as an argument and returns the vowels in the string
 
-let ask = prompt("type your name") //asking name from user
+// let ask = prompt("type your name") //asking name from user
 
-function str(val) {
-    let count = 0;
-    for (let i of val) {
-        if (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") {
-            count++
-        }
-    }
-    console.log(count)
+// function str(val) {
+//     let count = 0;
+//     for (let i of val) {
+//         if (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") {
+//             count++
+//         }
+//     }
+//     console.log(count)
+// }
+
+// str(ask) //passing user value as argument
+
+
+// doing same thing as above using arrow function
+
+// let arrask = prompt("Type any word to find out how many vowels are in it");
+
+// const arrstr = (arrval) => {
+//     let arrcount = 0;
+//     for (let i of arrval) {
+//         if (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") {
+//             arrcount++
+//         }
+//     }
+//     console.log(arrcount)
+// }
+
+// arrstr(arrask)
+
+
+// // for a given number of array print a square of each value using foreach loop
+
+// let num = [1,2,3,4,5];
+
+// num.forEach((val) =>{
+//     console.log(val*val);
+// })
+
+
+// let arr = [1,2,3,4];
+
+// let darr = arr.map((val) => {
+//     return val * val;
+// })
+
+// console.log(darr)
+
+// let arrr = arr.filter((val) =>{
+//     return val%2 === 0;
+// })
+
+// console.log(arrr)
+
+
+// Filtering themarks from array that are 90+;
+
+let marks = [55,92,85,90,78,99,100];
+
+let stdMarks = marks.filter((val) => {
+        return val > 90;
+})
+
+console.log(stdMarks)
+
+
+// Ask the user a number and create an array till that number
+
+let n = prompt("Give your number");
+
+let arr = [];
+
+for (let i = 1; i <= n; i++){
+    arr[i-1] = i
 }
 
-str(ask) //passing user value as argument
+console.log(arr)
 
+// Using the Reduce method to sum all the numbers of the new array
 
-// doing the same thing as above using the arrow function
+let adding = arr.reduce((prev, curr) =>{
+    return prev + curr
+})
 
-let arrask = prompt("Type any word to find out how many vowels are in it");
+console.log(`Sum = ${adding}`)
 
-const arrstr = (arrval) => {
-    let arrcount = 0;
-    for (let i of arrval) {
-        if (i == "a" || i == "e" || i == "i" || i == "o" || i == "u") {
-            arrcount++
-        }
-    }
-    console.log(arrcount)
-}
+// Using the Reduce method to generate a factorial of the new array
 
-arrstr(arrask)
+let factorial = arr.reduce((prev, curr) =>{
+    return prev * curr
+})
+
+console.log(`Factorial = ${factorial}`)
