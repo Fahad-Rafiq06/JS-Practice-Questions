@@ -199,3 +199,19 @@ let factorial = arr.reduce((prev, curr) =>{
 })
 
 console.log(`Factorial = ${factorial}`)
+
+
+// Appending value in HTML using js DOM Manipulation
+
+let appendValue = document.querySelector("h2");
+
+appendValue.innerText += " From the Greatest Businessman the world is going to witness";
+
+// Accessing the boxes of HTML
+
+let boxes = document.querySelectorAll(".box");
+let idx = 1;
+for (let div of boxes) {
+    div.innerText = `Unique Value ${idx}`;
+    idx++;
+}
