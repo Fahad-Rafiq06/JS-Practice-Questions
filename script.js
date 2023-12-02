@@ -1,4 +1,4 @@
-// loop to get each key and value of any obejct
+ng// loop to get each key and value of any obejct
 
 // let students = {
 //     name: "Fahad",
@@ -207,7 +207,7 @@ let appendValue = document.querySelector("h2");
 
 appendValue.innerText += " From the Greatest Businessman the world is going to witness";
 
-// Accessing the boxes of HTML
+// Accessing and setting values in the boxes of HTML
 
 let boxes = document.querySelectorAll(".box");
 let idx = 1;
