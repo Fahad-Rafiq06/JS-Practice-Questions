@@ -1,0 +1,15 @@
+.fahad{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.box{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    background-color: pink;
+    text-align: center;
+    margin: 5px;
+    padding: 50px 15px 0 15px  ;
+}
