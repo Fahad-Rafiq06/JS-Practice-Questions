@@ -216,6 +216,7 @@ for (let div of boxes) {
     idx++;
 }
 
+
 // creating a button using js and putting it as the first element of the body tag.
 
 let body = document.querySelector("body");
@@ -227,3 +228,10 @@ button.innerText = "Click Me";
 // button.style.color = "white";
 button.className = "fahad"
 body.prepend(button)
+
+
+// Adding new class to a paragraph using class list
+
+let para = document.querySelector("p");
+
+para.classList.add("newPara")
