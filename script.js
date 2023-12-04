@@ -1,4 +1,4 @@
-ng// loop to get each key and value of any obejct
+// loop to get each key and value of any obejct
 
 // let students = {
 //     name: "Fahad",
@@ -163,42 +163,42 @@ ng// loop to get each key and value of any obejct
 
 // Filtering themarks from array that are 90+;
 
-let marks = [55,92,85,90,78,99,100];
+let marks = [55, 92, 85, 90, 78, 99, 100];
 
 let stdMarks = marks.filter((val) => {
-        return val > 90;
+    return val > 90;
 })
 
 console.log(stdMarks)
 
 
-// Ask the user a number and create an array till that number
+// Ask from user a number and create an array till that number
 
-let n = prompt("Give your number");
+// let n = prompt("Give your number");
 
-let arr = [];
+// let arr = [];
 
-for (let i = 1; i <= n; i++){
-    arr[i-1] = i
-}
+// for (let i = 1; i <= n; i++){
+//     arr[i-1] = i
+// }
 
-console.log(arr)
+// console.log(arr)
 
-// Using the Reduce method to sum all the numbers of the new array
+// // Using Reduce method to sum all the numbers of new array
 
-let adding = arr.reduce((prev, curr) =>{
-    return prev + curr
-})
+// let adding = arr.reduce((prev, curr) =>{
+//     return prev + curr
+// })
 
-console.log(`Sum = ${adding}`)
+// console.log(`Sum = ${adding}`)
 
-// Using the Reduce method to generate a factorial of the new array
+// // Using Reduce method to generate factorial of new array
 
-let factorial = arr.reduce((prev, curr) =>{
-    return prev * curr
-})
+// let factorial = arr.reduce((prev, curr) =>{
+//     return prev * curr
+// })
 
-console.log(`Factorial = ${factorial}`)
+// console.log(`Factorial = ${factorial}`)
 
 
 // Appending value in HTML using js DOM Manipulation
@@ -207,7 +207,7 @@ let appendValue = document.querySelector("h2");
 
 appendValue.innerText += " From the Greatest Businessman the world is going to witness";
 
-// Accessing and setting values in the boxes of HTML
+// Accessing the boxes of html
 
 let boxes = document.querySelectorAll(".box");
 let idx = 1;
@@ -215,3 +215,15 @@ for (let div of boxes) {
     div.innerText = `Unique Value ${idx}`;
     idx++;
 }
+
+// creating a button using js and putting it as the first element of the body tag.
+
+let body = document.querySelector("body");
+
+let button = document.createElement("button");
+
+button.innerText = "Click Me";
+// button.style.backgroundColor = "red";
+// button.style.color = "white";
+button.className = "fahad"
+body.prepend(button)
