@@ -30,3 +30,15 @@
     height: 100px;
     text-align: center;
 }
+
+/* Css Using JS for Toggle Button */
+
+.light{
+    background-color: white;
+    color: black;
+}
+
+.dark{
+    background-color: black;
+    color: white;
+}
