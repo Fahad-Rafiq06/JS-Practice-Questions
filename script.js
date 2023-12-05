@@ -219,15 +219,15 @@ for (let div of boxes) {
 
 // creating a button using js and putting it as the first element of the body tag.
 
-let body = document.querySelector("body");
+// let body = document.querySelector("body");
 
-let button = document.createElement("button");
+// let button = document.createElement("button");
 
-button.innerText = "Click Me";
-// button.style.backgroundColor = "red";
-// button.style.color = "white";
-button.className = "fahad"
-body.prepend(button)
+// button.innerText = "Click Me";
+// // button.style.backgroundColor = "red";
+// // button.style.color = "white";
+// button.className = "fahad"
+// body.prepend(button)
 
 
 // Adding new class to a paragraph using class list
@@ -235,3 +235,29 @@ body.prepend(button)
 let para = document.querySelector("p");
 
 para.classList.add("newPara")
+
+
+//=========== Dark/Light Mode using Events and dom maniuplation ===============
+
+let togglebtn = document.querySelector("#togglebtn");
+let currmode = "Light";
+
+togglebtn.addEventListener("click", () => {
+    if(currmode === "Light"){
+        currmode = "Dark";
+        togglebtn.innerText = "Light Mode";
+        let body = document.querySelector("body");
+        body.classList.remove("light")
+        body.classList.add("dark");
+
+    }
+    else{
+        currmode = "Light";
+        togglebtn.innerText = "Dark Mode";
+        let body = document.querySelector("body");
+        body.classList.remove("dark")
+        body.classList.add("light");
+
+    }
+    console.log(currmode)
+})
