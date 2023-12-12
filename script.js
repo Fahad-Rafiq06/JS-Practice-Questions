@@ -261,3 +261,26 @@ togglebtn.addEventListener("click", () => {
     }
     console.log(currmode)
 })
+
+
+// Practicing classes and constructor in javascript
+// creating a class name as user and adding students in it. each student will add their name and email.
+
+let data = "This is College Data that users can access"
+
+class user {
+    constructor (name, email) {
+        this.name = name;
+        this.email = email
+    }
+
+    viewData(){
+        console.log(data);
+    }
+
+}
+
+let fahadStudent = new user("Fahad", "faddi7023@gmail.com");
+console.log(fahadStudent)
+let demoTeacher = new user("Random", "random@gmail.com");
+console.log(demoTeacher)
