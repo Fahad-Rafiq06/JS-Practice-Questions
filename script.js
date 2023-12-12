@@ -280,6 +280,20 @@ class user {
 
 }
 
+// now adding an admin class and giving him rights to edit the data and all the properties that user class holds.
+
+class admin extends user { //extends keyword is used to inherit all the properties of parent class to child class.
+    constructor(name, email){ //Constructor method is automatically invoked by new keyword if we don't create it. Constructor is use when new object is creating and there is some work to do at the begining of the object so we use contsructor.
+        super(name, email) //super keyword is used to pass the information back to it's parents where the work is originally done.
+    }
+
+    editData(){
+        data = "This is the new data that will be update the data on calling of the function"
+    }
+}
+
+let admin1 = new admin ("Rafiq", "abc@gmail.com"); //adding the object admin1 and passing it's values.
+
 let fahadStudent = new user("Fahad", "faddi7023@gmail.com");
 console.log(fahadStudent)
 let demoTeacher = new user("Random", "random@gmail.com");
