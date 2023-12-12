@@ -243,7 +243,7 @@ let togglebtn = document.querySelector("#togglebtn");
 let currmode = "Light";
 
 togglebtn.addEventListener("click", () => {
-    if(currmode === "Light"){
+    if (currmode === "Light") {
         currmode = "Dark";
         togglebtn.innerText = "Light Mode";
         let body = document.querySelector("body");
@@ -251,7 +251,7 @@ togglebtn.addEventListener("click", () => {
         body.classList.add("dark");
 
     }
-    else{
+    else {
         currmode = "Light";
         togglebtn.innerText = "Dark Mode";
         let body = document.querySelector("body");
@@ -269,12 +269,12 @@ togglebtn.addEventListener("click", () => {
 let data = "This is College Data that users can access"
 
 class user {
-    constructor (name, email) {
+    constructor(name, email) {
         this.name = name;
         this.email = email
     }
 
-    viewData(){
+    viewData() {
         console.log(data);
     }
 
@@ -283,18 +283,37 @@ class user {
 // now adding an admin class and giving him rights to edit the data and all the properties that user class holds.
 
 class admin extends user { //extends keyword is used to inherit all the properties of parent class to child class.
-    constructor(name, email){ //Constructor method is automatically invoked by new keyword if we don't create it. Constructor is use when new object is creating and there is some work to do at the begining of the object so we use contsructor.
+    constructor(name, email) { //Constructor method is automatically invoked by new keyword if we don't create it. Constructor is use when new object is creating and there is some work to do at the begining of the object so we use contsructor.
         super(name, email) //super keyword is used to pass the information back to it's parents where the work is originally done.
     }
 
-    editData(){
+    editData() {
         data = "This is the new data that will be update the data on calling of the function"
     }
 }
 
-let admin1 = new admin ("Rafiq", "abc@gmail.com"); //adding the object admin1 and passing it's values.
+let admin1 = new admin("Rafiq", "abc@gmail.com"); //adding the object admin1 and passing it's values.
 
 let fahadStudent = new user("Fahad", "faddi7023@gmail.com");
 console.log(fahadStudent)
 let demoTeacher = new user("Random", "random@gmail.com");
 console.log(demoTeacher)
+
+
+// Try Catch error handling. this method prints the error on the suspicious line where you think there might could be an error and run the remaining code without stopping.
+
+let a = 5;
+
+let b = 6;
+
+console.log(a + b);
+console.log(a + b);
+// console.log(a + c); //Now this line holds error or is a suspicious one so we can put it in try catch method. example in the next line.
+try {
+    console.log(a + c);
+}
+catch (error) {
+    console.log(error)
+}
+console.log(a + b);
+console.log(a + b);
