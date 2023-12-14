@@ -163,13 +163,13 @@
 
 // Filtering themarks from array that are 90+;
 
-let marks = [55, 92, 85, 90, 78, 99, 100];
+// let marks = [55, 92, 85, 90, 78, 99, 100];
 
-let stdMarks = marks.filter((val) => {
-    return val > 90;
-})
+// let stdMarks = marks.filter((val) => {
+//     return val > 90;
+// })
 
-console.log(stdMarks)
+// console.log(stdMarks)
 
 
 // Ask from user a number and create an array till that number
@@ -203,18 +203,18 @@ console.log(stdMarks)
 
 // Appending value in HTML using js DOM Manipulation
 
-let appendValue = document.querySelector("h2");
+// let appendValue = document.querySelector("h2");
 
-appendValue.innerText += " From the Greatest Businessman the world is going to witness";
+// appendValue.innerText += " From the Greatest Businessman the world is going to witness";
 
-// Accessing the boxes of html
+// // Accessing the boxes of html
 
-let boxes = document.querySelectorAll(".box");
-let idx = 1;
-for (let div of boxes) {
-    div.innerText = `Unique Value ${idx}`;
-    idx++;
-}
+// let boxes = document.querySelectorAll(".box");
+// let idx = 1;
+// for (let div of boxes) {
+//     div.innerText = `Unique Value ${idx}`;
+//     idx++;
+// }
 
 
 // creating a button using js and putting it as the first element of the body tag.
@@ -232,9 +232,9 @@ for (let div of boxes) {
 
 // Adding new class to a paragraph using class list
 
-let para = document.querySelector("p");
+// let para = document.querySelector("p");
 
-para.classList.add("newPara")
+// para.classList.add("newPara")
 
 
 //=========== Dark/Light Mode using Events and dom maniuplation ===============
@@ -266,54 +266,54 @@ togglebtn.addEventListener("click", () => {
 // Practicing classes and constructor in javascript
 // creating a class name as user and adding students in it. each student will add their name and email.
 
-let data = "This is College Data that users can access"
+// let data = "This is College Data that users can access"
 
-class user {
-    constructor(name, email) {
-        this.name = name;
-        this.email = email
-    }
+// class user {
+//     constructor(name, email) {
+//         this.name = name;
+//         this.email = email
+//     }
 
-    viewData() {
-        console.log(data);
-    }
+//     viewData() {
+//         console.log(data);
+//     }
 
-}
+// }
 
 // now adding an admin class and giving him rights to edit the data and all the properties that user class holds.
 
-class admin extends user { //extends keyword is used to inherit all the properties of parent class to child class.
-    constructor(name, email) { //Constructor method is automatically invoked by new keyword if we don't create it. Constructor is use when new object is creating and there is some work to do at the begining of the object so we use contsructor.
-        super(name, email) //super keyword is used to pass the information back to it's parents where the work is originally done.
-    }
+// class admin extends user { //extends keyword is used to inherit all the properties of parent class to child class.
+//     constructor(name, email) { //Constructor method is automatically invoked by new keyword if we don't create it. Constructor is use when new object is creating and there is some work to do at the begining of the object so we use contsructor.
+//         super(name, email) //super keyword is used to pass the information back to it's parents where the work is originally done.
+//     }
 
-    editData() {
-        data = "This is the new data that will be update the data on calling of the function"
-    }
-}
+//     editData() {
+//         data = "This is the new data that will be update the data on calling of the function"
+//     }
+// }
 
-let admin1 = new admin("Rafiq", "abc@gmail.com"); //adding the object admin1 and passing it's values.
+// let admin1 = new admin("Rafiq", "abc@gmail.com"); //adding the object admin1 and passing it's values.
 
-let fahadStudent = new user("Fahad", "faddi7023@gmail.com");
-console.log(fahadStudent)
-let demoTeacher = new user("Random", "random@gmail.com");
-console.log(demoTeacher)
+// let fahadStudent = new user("Fahad", "faddi7023@gmail.com");
+// console.log(fahadStudent)
+// let demoTeacher = new user("Random", "random@gmail.com");
+// console.log(demoTeacher)
 
 
 // Try Catch error handling. this method prints the error on the suspicious line where you think there might could be an error and run the remaining code without stopping.
 
-let a = 5;
+// let a = 5;
 
-let b = 6;
+// let b = 6;
 
-console.log(a + b);
-console.log(a + b);
-// console.log(a + c); //Now this line holds error or is a suspicious one so we can put it in try catch method. example in the next line.
-try {
-    console.log(a + c);
-}
-catch (error) {
-    console.log(error)
-}
-console.log(a + b);
-console.log(a + b);
+// console.log(a + b);
+// console.log(a + b);
+// // console.log(a + c); //Now this line holds error or is a suspicious one so we can put it in try catch method. example in the next line.
+// try {
+//     console.log(a + c);
+// }
+// catch (error) {
+//     console.log(error)
+// }
+// console.log(a + b);
+// console.log(a + b);
