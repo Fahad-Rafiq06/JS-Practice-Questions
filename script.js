@@ -317,3 +317,29 @@ togglebtn.addEventListener("click", () => {
 // }
 // console.log(a + b);
 // console.log(a + b);
+
+// ========= Practising callback functions and call back hell ===========
+
+function getData(dataId) {
+    setTimeout(() => {
+        console.log("data " + dataId)
+    }, 2000);
+}
+
+getData(1) // ye hai aam zindagi but what if mujhe multiple data get krna hai after 2 secs of each result
+
+function getData(dataId, nextData) { //ye hai mentos zindagi mtlb callback pyramid that will show each output after 2 secs.
+    setTimeout(() => {
+        console.log("data " + dataId);
+        if (nextData) {
+            nextData();
+        }
+    }, 2000);
+}
+
+getData(2, () => { // ye hai callback function
+    getData(3, () => { // aur yeh structure kehlata hai callback hell
+        getData(4) // aur ye confusion create krta hai issliye bad way of writing code keh lata hai
+    })
+})
+
