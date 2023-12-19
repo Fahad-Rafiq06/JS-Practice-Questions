@@ -345,16 +345,38 @@ togglebtn.addEventListener("click", () => {
 
 // now using promises
 
-function getData(dataId, nextData) { // using the same funciton to call a dta but after 5 seconds and what promise do is
-    return new Promise((resolve, reject) => { // promise takes 2 callbacks and js creates these functions automatically
-    setTimeout(() => { // promises return the value to me with a promise that this function will eventually run
-        console.log("data " + dataId); // and either this proise will be resolves, rejected or will be a pending if no result.
-        resolve("success") // here I am passing the success/resolve function so that when this function will console the dataID then the promise will be fulfilled.
-        if (nextData) {
-            nextData();
-        }
-    }, 5000);
-})
+// function getData(dataId, nextData) { // using the same funciton to call a dta but after 5 seconds and what promise do is
+//     return new Promise((resolve, reject) => { // promise takes 2 callbacks and js creates these functions automatically
+//     setTimeout(() => { // promises return the value to me with a promise that this function will eventually run
+//         console.log("data " + dataId); // and either this proise will be resolves, rejected or will be a pending if no result.
+//         resolve("success") // here I am passing the success/resolve function so that when this function will console the dataID then the promise will be fulfilled.
+//         if (nextData) {
+//             nextData();
+//         }
+//     }, 5000);
+// })
+// }
+
+// let fahad = getData("this is the Data"); //fahad is a promise and when you will get fahad you will receive pending till the above function runs and then fahad (promise) will be successful/resolve
+
+
+// now lets create a function and return a promise
+
+const getPromoise = () =>{
+    return new Promise((resolve, reject) => {
+        console.log("this is a promise");
+        // resolve("success");
+        reject("error")
+    }) 
+
 }
 
-let fahad = getData("this is the Data"); //fahad is a promise and when you will get fahad you will receive pending till the above function runs and then fahad (promise) will be successful/resolve
+let promise = getPromoise();
+
+promise.then((res) =>{ //if promise is successful then run this function and execute this code
+    console.log("promise is fulfilled")
+})
+
+promise.catch((err) => { //if promise is rejected then run this function and execute this code
+    console.log("promise is rejected")
+})
