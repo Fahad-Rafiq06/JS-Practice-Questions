@@ -420,12 +420,24 @@ function getData(dataId) {
 
 // ============ now using Async-Await for the same result but in more effecient way ===============
 
-async function gettingData () { //async is a keyword that we can use with any function that returns promises
-    await getData(1); // await keyword will only work under async function and this keyword will stop all the other work below it.
-    await getData(2); // this will run after the first await
-    await getData(3); // this will run after the second await and so forth and so forth
+// async function gettingData () { //async is a keyword that we can use with any function that returns promises
+//     await getData(1); // await keyword will only work under async function and this keyword will stop all the other work below it.
+//     await getData(2); // this will run after the first await
+//     await getData(3); // this will run after the second await and so forth and so forth
+//     await getData(4);
+//     await getData(5);
+// }
+
+// gettingData();
+
+// now there is a way where I don't have to call the function unnecessarily and it is called IIFE (Immediately Invoked Function Expression)
+
+(async function () {  // IIFE is a function that don't have any name and it will get executed at the moment it is created.
+    await getData(1); // IIFe is used for one-time only or otherwise we will have to copy paste it for reusable.
+    await getData(2); 
+    await getData(3); 
     await getData(4);
     await getData(5);
-}
+}) ();
 
-gettingData();
+// now I don't have to call the above function as it will be invoked by itself the moment it created.
