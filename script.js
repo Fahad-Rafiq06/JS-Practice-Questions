@@ -404,16 +404,28 @@ function getData(dataId) {
 
 // ================ now using promise chain for the same result ===============
 
-getData(1)
-    .then(() => {
-        return getData(2);
-})
-    .then(() => {
-        return getData(3);
-})
-    .then(() => {
-        return getData(4);
-})
-    .then((res) => {
-        console.log(res)
-})
+// getData(1)
+//     .then(() => {
+//         return getData(2);
+// })
+//     .then(() => {
+//         return getData(3);
+// })
+//     .then(() => {
+//         return getData(4);
+// })
+//     .then((res) => {
+//         console.log(res)
+// })
+
+// ============ now using Async-Await for the same result but in more effecient way ===============
+
+async function gettingData () { //async is a keyword that we can use with any function that returns promises
+    await getData(1); // await keyword will only work under async function and this keyword will stop all the other work below it.
+    await getData(2); // this will run after the first await
+    await getData(3); // this will run after the second await and so forth and so forth
+    await getData(4);
+    await getData(5);
+}
+
+gettingData();
