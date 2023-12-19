@@ -362,21 +362,58 @@ togglebtn.addEventListener("click", () => {
 
 // now lets create a function and return a promise
 
-const getPromoise = () =>{
+const getPromoise = () => {
     return new Promise((resolve, reject) => {
         console.log("this is a promise");
         // resolve("success");
         reject("error")
-    }) 
+    })
 
 }
 
 let promise = getPromoise();
 
-promise.then((res) =>{ //if promise is successful then run this function and execute this code
+promise.then((res) => { //if promise is successful then run this function and execute this code
     console.log("promise is fulfilled")
 })
 
 promise.catch((err) => { //if promise is rejected then run this function and execute this code
     console.log("promise is rejected")
+})
+
+
+function getData(dataId) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("data " + dataId);
+            resolve("success")
+            // if (nextData) { // no need for callback(next data) in promise chain
+            //     nextData();
+            // }
+        }, 2000);
+    })
+}
+
+//===================== Callback hell problem =====================
+
+// getData(2, () => { // ye hai callback function
+//     getData(3, () => { // aur yeh structure kehlata hai callback hell
+//         getData(4) // aur ye confusion create krta hai issliye bad way of writing code keh lata hai
+//     })
+// })
+
+// ================ now using promise chain for the same result ===============
+
+getData(1)
+    .then(() => {
+        return getData(2);
+})
+    .then(() => {
+        return getData(3);
+})
+    .then(() => {
+        return getData(4);
+})
+    .then((res) => {
+        console.log(res)
 })
