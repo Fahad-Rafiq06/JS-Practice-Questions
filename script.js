@@ -320,26 +320,41 @@ togglebtn.addEventListener("click", () => {
 
 // ========= Practising callback functions and call back hell ===========
 
-function getData(dataId) {
-    setTimeout(() => {
-        console.log("data " + dataId)
-    }, 2000);
-}
+// function getData(dataId) {
+//     setTimeout(() => {
+//         console.log("data " + dataId)
+//     }, 2000);
+// }
 
-getData(1) // ye hai aam zindagi but what if mujhe multiple data get krna hai after 2 secs of each result
+// getData(1) // ye hai aam zindagi but what if mujhe multiple data get krna hai after 2 secs of each result
 
-function getData(dataId, nextData) { //ye hai mentos zindagi mtlb callback pyramid that will show each output after 2 secs.
-    setTimeout(() => {
-        console.log("data " + dataId);
+// function getData(dataId, nextData) { //ye hai mentos zindagi mtlb callback pyramid that will show each output after 2 secs.
+//     setTimeout(() => {
+//         console.log("data " + dataId);
+//         if (nextData) {
+//             nextData();
+//         }
+//     }, 2000);
+// }
+
+// getData(2, () => { // ye hai callback function
+//     getData(3, () => { // aur yeh structure kehlata hai callback hell
+//         getData(4) // aur ye confusion create krta hai issliye bad way of writing code keh lata hai
+//     })
+// })
+
+// now using promises
+
+function getData(dataId, nextData) { // using the same funciton to call a dta but after 5 seconds and what promise do is
+    return new Promise((resolve, reject) => { // promise takes 2 callbacks and js creates these functions automatically
+    setTimeout(() => { // promises return the value to me with a promise that this function will eventually run
+        console.log("data " + dataId); // and either this proise will be resolves, rejected or will be a pending if no result.
+        resolve("success") // here I am passing the success/resolve function so that when this function will console the dataID then the promise will be fulfilled.
         if (nextData) {
             nextData();
         }
-    }, 2000);
+    }, 5000);
+})
 }
 
-getData(2, () => { // ye hai callback function
-    getData(3, () => { // aur yeh structure kehlata hai callback hell
-        getData(4) // aur ye confusion create krta hai issliye bad way of writing code keh lata hai
-    })
-})
-
+let fahad = getData("this is the Data"); //fahad is a promise and when you will get fahad you will receive pending till the above function runs and then fahad (promise) will be successful/resolve
